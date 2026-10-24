@@ -10,7 +10,7 @@ const roles = [
 const kpis = [
   { value: '2026', label: 'B.Tech IT graduate' },
   { value: '7.5', label: 'CGPA' },
-  { value: '04', label: 'Projects shipped' },
+  { value: '06', label: 'Projects shipped' },
   { value: '01', label: 'IEEE publication' },
 ]
 
