@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react'
 // Vercel, or any static host without extra path configuration.
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: '/Muthu-Bharani-portfolio/',
 })
