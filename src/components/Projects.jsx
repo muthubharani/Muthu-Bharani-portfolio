@@ -1,5 +1,22 @@
 const projects = [
   {
+    domain: 'Company · SaaS Platform',
+    title: 'Namuvi N1 Suite',
+    subtitle: 'Work, people and business management platform, similar to Jira',
+    description:
+      'Worked on Namuvi N1 Suite, a Jira-style platform for managing day-to-day business operations in one place, including attendance, leave, clients, employees, projects, tasks and invoices. Built React interfaces and backend features for task and sub-task tracking, leave and comp-off workflows with admin approval, payslip generation and subscription billing. Focused on clear, responsive screens and reliable workflows for admins, managers and employees.',
+    tags: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Attendance', 'Invoicing'],
+  },
+    {
+    domain: 'Company · CRM Platform',
+    title: 'CarQure CRM',
+    subtitle: 'Car service platform connecting garages and customers',
+    description:
+      'Worked on CarQure, an automotive service platform that connects customers with garages for car servicing. Built back-end APIs for bookings, garage jobs, estimates, invoices, customer feedback and subscription plans, with agent-wise reporting for the CRM team. Added features such as GST invoice PDF generation, nearby garage matching by distance, booking allocation across CRM agents, and city-wise service pricing, while fixing bugs and improving the reliability of everyday booking and job workflows.',
+    tags: ['Node.js', 'Express', 'PostgreSQL', 'REST APIs', 'AWS S3', 'CRM'],
+  },
+  
+  {
     domain: 'Finance',
     title: 'BudgetBuddy',
     subtitle: 'Smart financial control web app',
