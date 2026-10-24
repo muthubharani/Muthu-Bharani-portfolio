@@ -57,9 +57,9 @@ export default function Hero() {
           Available for new opportunities &middot; Open to relocate to Coimbatore
         </div>
 
-        <p className="hero__eyebrow">
+        {/* <p className="hero__eyebrow">
           <span className="hero__prompt">visitor@portfolio:~$</span> whoami
-        </p>
+        </p> */}
 
         <h1 className="hero__name">Muthu&nbsp;Bharani&nbsp;P</h1>
 
