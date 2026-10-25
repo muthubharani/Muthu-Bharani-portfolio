@@ -54,7 +54,7 @@ export default function Hero() {
       <div className="hero__inner">
         <div className="hero__status">
           <span className="status-dot" aria-hidden="true" />
-          Available for new opportunities &middot; Open to relocate to Coimbatore
+          Available for new opportunities &middot; Open to relocate to any locations
         </div>
 
         {/* <p className="hero__eyebrow">
