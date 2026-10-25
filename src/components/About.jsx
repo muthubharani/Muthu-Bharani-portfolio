@@ -6,17 +6,12 @@ export default function About() {
       <div className="section__inner about">
         <div className="section__head">
           <span className="eyebrow">Overview</span>
-          <h2 className="section__title">A front-end developer who likes turning data into interfaces</h2>
+          <h2 className="section__title">A software engineer who enjoys turning ideas into real-world solutions./h2>
         </div>
 
         <div className="about__grid">
           <p className="about__text">
-            I'm a results-driven front-end developer working with HTML5, CSS3, JavaScript, Bootstrap
-            and React. I graduated with a B.Tech in Information Technology (CGPA 7.5) from M Kumarasamy
-            College of Engineering, and I'm an AWS Certified Cloud Practitioner. Alongside web development,
-            I co-authored an IEEE-presented research paper on machine learning for cyber threat detection.
-            I enjoy building responsive, cross-browser interfaces &mdash; especially dashboards, forms and
-            data-heavy screens &mdash; and I'm looking for a front-end role in Coimbatore.
+            I'm a passionate Software Developer with a B.Tech in Information Technology. I work with React, JavaScript, Node.js, Express.js, MySQL, and AWS to build responsive websites and web applications. I'm interested in frontend, backend, and full-stack development, and I enjoy learning new technologies and solving real-world problems. I'm open to relocation anywhere in India for the right opportunity.
           </p>
 
           <div className="now-card">
