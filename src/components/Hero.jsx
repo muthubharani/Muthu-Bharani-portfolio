@@ -69,9 +69,7 @@ export default function Hero() {
         </p>
 
         <p className="hero__summary">
-          Building responsive, accessible interfaces with HTML5, CSS3, JavaScript and React.
-          Currently shipping front-end features as a Software Engineer at Namuvi Technologies,
-          Chennai &mdash; with a side interest in data dashboards and applied machine learning.
+          I’m a software engineer at Namuvi Technologies in Chennai. I build both sides of a web app: clean, responsive, accessible interfaces with React, HTML, CSS, and JavaScript, and the backend behind them with Node.js, Express, and PostgreSQL.
         </p>
 
         <div className="hero__actions">
