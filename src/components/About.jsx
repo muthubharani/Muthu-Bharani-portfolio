@@ -6,7 +6,7 @@ export default function About() {
       <div className="section__inner about">
         <div className="section__head">
           <span className="eyebrow">Overview</span>
-          <h2 className="section__title">A software engineer who enjoys turning ideas into real-world solutions./h2>
+          <h2 className="section__title">A software engineer who enjoys turning ideas into real-world solutions.</h2>
         </div>
 
         <div className="about__grid">
