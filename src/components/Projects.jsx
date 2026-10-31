@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react'
+
 const projects = [
     {
     domain: 'Company · SaaS Platform',
@@ -50,30 +52,91 @@ const projects = [
   },
 ]
 
+// Tracks whether the element is currently in view so reveals can replay.
+function useInViewOnce(threshold = 0.2) {
+  const ref = useRef(null)
+  const [inView, setInView] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [threshold])
+
+  return [ref, inView]
+}
+
+function ProjectCard({ project, index }) {
+  const [ref, inView] = useInViewOnce(0.2)
+
+  // 3D tilt + cursor spotlight
+  const handleMove = (e) => {
+    const el = e.currentTarget
+    const rect = el.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    el.style.setProperty('--mx', `${x}px`)
+    el.style.setProperty('--my', `${y}px`)
+    el.style.setProperty('--ry', `${((x / rect.width - 0.5) * 8).toFixed(2)}deg`)
+    el.style.setProperty('--rx', `${(-(y / rect.height - 0.5) * 8).toFixed(2)}deg`)
+  }
+
+  const handleLeave = (e) => {
+    e.currentTarget.style.setProperty('--rx', '0deg')
+    e.currentTarget.style.setProperty('--ry', '0deg')
+  }
+
+  return (
+    <article
+      ref={ref}
+      className={`project-card ${inView ? 'is-visible' : ''}`}
+      style={{ '--delay': `${(index % 2) * 150}ms` }}
+      onMouseMove={handleMove}
+      onMouseLeave={handleLeave}
+    >
+      <span className="project-card__index" aria-hidden="true">
+        {String(index + 1).padStart(2, '0')}
+      </span>
+
+      <div className="project-card__top">
+        <span className="project-card__domain">{project.domain}</span>
+      </div>
+      <h3 className="project-card__title">{project.title}</h3>
+      <p className="project-card__subtitle">{project.subtitle}</p>
+      <p className="project-card__description">{project.description}</p>
+      <div className="project-card__tags">
+        {project.tags.map((tag, i) => (
+          <span className="tag" key={tag} style={{ '--t': i }}>
+            {tag}
+          </span>
+        ))}
+      </div>
+    </article>
+  )
+}
+
 export default function Projects() {
+  const [headRef, headInView] = useInViewOnce(0.3)
+
   return (
     <section id="projects" className="section">
       <div className="section__inner">
-        <div className="section__head">
+        <div
+          ref={headRef}
+          className={`section__head proj-reveal ${headInView ? 'is-visible' : ''}`}
+        >
           <span className="eyebrow">Projects</span>
           <h2 className="section__title">A few things I've shipped</h2>
         </div>
 
         <div className="projects-grid">
-          {projects.map((project) => (
-            <article className="project-card" key={project.title}>
-              <div className="project-card__top">
-                <span className="project-card__domain">{project.domain}</span>
-              </div>
-              <h3 className="project-card__title">{project.title}</h3>
-              <p className="project-card__subtitle">{project.subtitle}</p>
-              <p className="project-card__description">{project.description}</p>
-              <div className="project-card__tags">
-                {project.tags.map((tag) => (
-                  <span className="tag" key={tag}>{tag}</span>
-                ))}
-              </div>
-            </article>
+          {projects.map((project, index) => (
+            <ProjectCard project={project} index={index} key={project.title} />
           ))}
         </div>
       </div>
